@@ -3,6 +3,8 @@ novy
 
 The Novy programming suite
 
+**Welcome to Novy!  The New Black is here!**
+
 
 What does "novy" mean?
 ----
@@ -20,9 +22,15 @@ Novy is a text-based set of bash scripts that generate files automatically.  It 
 
 The first time you use novy, you create a file called .novyrc with novyrc.sh. It will ask you a few questions to insert your name and email address as well as set up the fields for adding dates and date formats for header documentation.
 
-The next time you use novy, you can use it to generate Java, C/C++, even scripts with the header documentation set up for you.
+The next time you use novy, you can use it to generate Java, C/C++, even scripts with the header documentation set up for you.  The script that generates the documentation is called novy_doc.sh.  But you don't really need to run novy_doc.sh directly as it is part of the main script simply called novy.sh.
 
-But Novy doesn't just set up header documentation.  It also establishes templates.  As of this writing, novy_java sets up four common templates for class construction: main, class, abstract class, and interface.  It's something I hope to establish with other languages in the future and eventually down the road user-defined templates.
+But Novy doesn't just set up header documentation.  It also establishes templates.  As of this writing, novy_java.sh sets up four common templates for class construction: main, class, abstract class, and interface.  It's something I hope to establish with other languages in the future and eventually down the road user-defined templates.
+
+Depending on what language you ask novy to write for you, based on the file extension you give for your file, novy.sh will run one of three scripts once it is done checking to see if .novyrc exists and writing the file header information.
+
+If you intend on making a .java file, novy.sh will call upon novy_java.sh.  If you intend on making a .c, .cpp, .h, or .hpp file, novy_c.sh will be called upon.  For most scripting languages like Bash (.sh), Perl (.pl), Python (.py), and Ruby (.rb), novy_script.sh will be the program of choice.
+
+In a near future version of Novy, I also plan to include Haskell (.hs, .lhs), Scala (.scala), Lisp (.lisp, .el, .cl), HTML, JavaScript, CSS, SQL, and PHP though my primary goal is to make Novy work for Java, C++, and Ruby (including JRuby) for the moment.
 
 
 So why use "novy" instead of a IDE like Eclipse or Netbeans?  Why do you like Vim?
@@ -41,4 +49,3 @@ But Novy just isn't some program that you run.  It's a project that explains wit
 
 Novy's Wiki will be put to good use for that.  Pointing out the important stuff that is in the Vim Wikia that's buried under a bunch of how-tos that you may never use, and putting them into interactive scripts that are painless and at the same time bold.
 
-**Welcome to Novy!  The New Black is here!**
