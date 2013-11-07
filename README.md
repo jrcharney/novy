@@ -9,9 +9,9 @@ What does "novy" mean?
 
 If my genealogy and understanding of a few words in other languages is correct, "novy" should be the Slavic word for "new".
 
-The idea was to make something that stood out. It turns out "Charney" is the Slavic word for the color "Black" when translated into Polish ("czarny"), Russian ("черный"), Ukranian ("чорний"), and several other dialects of languages stemming from Slavic roots.
+The idea was to make something that stood out. It turns out "Charney" is the Slavic word for the color "Black" when translated into Polish ("czarny"), Czech ("černý"). Slovak ("čierny"), Russian ("черный"), Ukranian ("чорний"), and several other dialects of languages stemming from Slavic roots.
 
-So why not come up with some cool name for all my "new" programs? "nowy" (.pl), "новый" (.ru), "новий" (.ua) seemed to have pointed to the same Romanization: Novy.
+So why not come up with some cool name for all my "new" programs? "nowy" (.pl), "nový" (.cz), "nový" (.sk), "новый" (.ru), "новий" (.ua) seemed to have pointed to the same Romanization: Novy.
 
 
 So what is "novy"?
