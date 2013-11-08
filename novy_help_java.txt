@@ -1,0 +1,110 @@
+# File: novy_help_java.txt
+# Autor: Jason Charney, BSCS
+# Email: jrcharneyATgmailDOTcom
+# Date:   7 Nov 2013
+# Info:  The contents of the help section for novy_java
+
+novy_java -- Automatically generate a .java file for programming.
+
+USAGE
+ ./novy_java --file [PATH/]File[.java]
+	[--template (main|class|abstract|interface)]
+	[--extends (ClassName|"interfaceList")]
+	[--implements "InterfaceList"]
+	[--package packagePath]
+	[--import "importList"]
+	[DOCOPTS]
+
+NOTE: "List" arguments should be in quotes so that they are treated as one argument.
+      Class names (and their constructor methods) and interface names 
+      usually start with an uppercase letter, traditionally.
+      Methods start with a lowercase letter, traditionally.
+      Constants (a.k.a. fields) are un upper case with words
+      separated by underscores, traditionally.
+      This program will uphold these traditions where necessary,
+      and it is best practice to use them.
+      This program will NOT generate javadoc.  You are on your own with that.
+
+
+Personal preferences are stored in .novyrc which are generated using
+another script called novy_rc.sh
+
+OPTIONS
+ For Information about file header documentation, view the help page for novy_doc.sh.
+ See novy_help_doc.txt for information.
+ All other options for this program will be listed here.
+
+ --file [PATH/]File[.java]		(-f [PATH/]File[.java])
+ 	The required argument and what should be the first argument.
+	This is the file that new_java will create.
+	If you don't add the .java extension, this program will.
+	If you include a path that doesn't exist, this program will.
+	If you don't capitalize the first letter in the file name,
+	this program will.
+
+ --template (main|class|abstract|interface|none)
+	Generate a java file based on one of four common template.
+
+  - --template main			(-tm)
+	The main template. Create your standard public class with
+	"public static void main" method required for executing a program.
+	This is the default template if a template command is not used.
+
+  - --template class			(-tc)
+  	The class template. Creates a public class with a public constructor.
+
+  - --template abstract			(-tca)
+  	The abstract class template.  It's like an interface, except
+	abstract classes can handle static and instance variables and constant
+	and regular methods (which are defined) and abstract methods 
+	(which aren't defined). Abstract classes can also define static methods.
+	Creates a "public abstract class".
+
+  - --template interface		(-ti)
+  	The interface template. Creates a "public interface" that where
+	static constants (or as Java folks call them "fields") are defined
+	and abstract methods are declared but not defined.
+
+  - --template none			(-tn)
+  	Apply no template, just generate a .java file.
+
+ --extends ClassName			(-x ClassName)
+ 	Inherit fields and methods from a parent class
+	based on the permission defined by the modifier keywords
+	used in the parent class or method.
+	Java only allows one class extension to be used.
+	This if you are creating a class, only get to inherit
+	from one other class. This applies to abstract classes as well.
+ 
+ --extends "InterfaceList"		(-x "InterfaceList")
+ 	If you are creating an interface, you can inherit
+	more than one other interface.
+	Multiple inheritance only applies to interfaces.
+	You don't need to define abstract methods of a parent interface
+	if you extend that interface to the interface you are creating.
+	
+ --implements "InterfaceList"		(-m "InterfaceList")
+ 	This should be used for classes only.
+	Implement one or more interfaces upon a class.
+	When you implement the interface in a class,
+	you will need to define all the abstract methods that
+	were declared in the interface and any of the interface's
+	ancestors.
+
+ --package packagePath			(-z packagePath)
+	If this file is part of a package, using this option
+	will add the line denoting its membership of that package.
+	Not all java files are part of a package.
+
+ --import "importList"			(-i "importList")
+	Use this option to include other files or packages.
+
+CREDITS
+  Created by Jason Charney, BSCS (jrcharneyATgmailDOTcom)
+  
+  Visit my webiste at http://www.jrcharney.com/ or my GitHub page at https://github.com/jrcharney/
+
+  Copyright  7 Nov 2013
+
+LICENSE
+ MIT License. Free to use. Free to share. Free to edit so as long as you acknowlege the original author (me).
