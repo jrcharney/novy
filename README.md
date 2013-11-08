@@ -30,7 +30,7 @@ Depending on what language you ask novy to write for you, based on the file exte
 
 If you intend on making a .java file, novy.sh will call upon novy_java.sh.  If you intend on making a .c, .cpp, .h, or .hpp file, novy_c.sh will be called upon.  For most scripting languages like Bash (.sh), Perl (.pl), Python (.py), and Ruby (.rb), novy_script.sh will be the program of choice.
 
-In a near future version of Novy, I also plan to include Haskell (.hs, .lhs), Scala (.scala), Lisp (.lisp, .el, .cl), HTML, JavaScript, CSS, SQL, and PHP though my primary goal is to make Novy work for Java, C++, and Ruby (including JRuby) for the moment.
+In a near future version of Novy, I also plan to include Haskell (.hs, .lhs), Scala (.scala), Lisp (.lisp, .el, .cl), LaTeX (.tex), PostScript (.ps), HTML, JavaScript, CSS, SQL, and PHP though my primary goal is to make Novy work for Java, C++, and Ruby (including JRuby) for the moment.
 
 
 So why use "novy" instead of a IDE like Eclipse or Netbeans?  Why do you like Vim?
