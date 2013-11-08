@@ -1,0 +1,32 @@
+# File: DISCLAIMER.txt
+# Author: Jason Charney, BSCS
+# Email: jrcharneyATgmailDOTcom
+# Date:  7 Nov 2013
+
+== DISCLAIMER ==
+Novy and its related programs does not send data online, unless you are running
+this program online like on a webserver or a website like Koding.com.
+At any rate, no data will be transfered elsewhere, ever.
+Any data that is use is stored locally for your use only, and will
+only be stored on the .newrc file this script was meant to create.
+If this program is altered to do such a thing, stop using it
+immediately and contact me, Jason Charney (jrcharneyATgmailDOTcom)
+indicating that a forged version of this program is trying use your
+data or ask more personal questions like bank accounts or social security
+numbers.  THIS PROGRAM WILL NEVER ASK THOSE QUESTIONS!
+
+As for any other problems, I'm not responsible if anything breaks or other
+disasters caused by you or some act of God or ghost in the machine.
+I will take constructive criticism and ideas for how to improve stuff.
+However, if you made a dud program or it didn't "wow" the people you impressed
+that's on you.  I can't impress anyone anymore than I can change the weather.
+So if something goes bad, it wasn't because you used my programs but
+more than likely you did something that wasn't supposed to happen or
+you probably abused this program.
+
+At any rate, fixing this program, or customizing it, should be easy. YMMV.
+If there was any part of this disclaimer you did no catch, read DISCLAIMER.txt.
+By using this script you agree to use my programs properly and not abuse them.
+
+TLDR: Make sure this script is real, and don't make programs that could
+	ruin your life through a series of unfortunate events.
