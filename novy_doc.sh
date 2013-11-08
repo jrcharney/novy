@@ -108,8 +108,8 @@ while :; do
   --book-webiste-accessed|-bwa)		shift; book[accessed]=$1 ;;	# Whe the website was accessed.
   --book-figure|-bfn)			shift; book[figure]=$1 ;;	# figure number from a book
   --book-page|-bfp)			shift; book[page]=$1 ;;		# the page number a book example/figure is on
-  --noself)				       use[self]=0 ;;		# don't use the self fields from .newrc
-  --nodate)             	  	       use[fecha]=0 ;;		# don't use the fecha field from .newrc
+  --noself)				       use[self]=0 ;;		# don't use the self fields from .novyrc
+  --nodate)             	  	       use[fecha]=0 ;;		# don't use the fecha field from .novyrc
   --nofile)				       use[file]=0 ;;		# don't use any of the file fields other than the file[name] field.
   --nobook)				       use[book]=0 ;;		# don't use the book fields even if any of the were filled out.
   --comment-style|-cs)			shift; use[style]=${1,,} ;;	# Indicate which comment style to use.
