@@ -48,6 +48,8 @@ file_map(){
   exit 1
  fi
  [[ $1 =~ .java$ ]] && file[full]="${1}" || file[full]="${1}.java"				# Full file name. Append ".java" if it hasn't been done.
+ file[ext]=${file[full]##*.}         # File extension.
+
  file[path]=${file[full]%/*}									# File path.  If not path, returns the string as it is.
  file[name]=${file[full]##*/}									# File name. Strip out the path
  [[ ${file[path]} == ${file[name]} ]] && file[path]=""						# This should help prevent directory creation later.
