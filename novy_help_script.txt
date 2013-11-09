@@ -1,0 +1,48 @@
+# File: novy_help_script.txt
+# Autor: Jason Charney, BSCS
+# Email: jrcharneyATgmailDOTcom
+# Date:   8 Nov 2013
+# Info:  The contents of the help section for novy_script
+
+novy_script - automatically create files for
+		Bash (.sh), Perl (.pl), Ruby (.rb),
+		PostScript (.ps), and Python (.py)
+
+USAGE
+ ./novy_script --file [PATH/]FILENAME.EXT
+   [--template TEMPLATE]
+   [--extends EXTENDS] (coming soon)
+   [--imports IMPORTS] (coming soon)
+   [--requires REQUIRES] (coming soon)
+   [--includes INCLUDES] (coming soon)
+   [DOCOPTS]
+
+Personal preferences are stored in .novyrc which are generated using
+another script called novy_rc.sh
+
+OPTIONS
+ For Information about file header documentation, view the help page for novy_doc.sh.
+ See novy_help_doc.txt for information.
+ All other options for this program will be listed here.
+
+
+  --file FILENAME.EXT		-f FILENAME.EXT
+  Create a new file with one of the following extensions:
+  	.sh, .rb, .pl, .ps, .py
+
+  Other options are coming in the near future, especially for Ruby.
+
+  --help			-h
+  Print this usages information.
+
+
+CREDITS
+  Created by Jason Charney, BSCS (jrcharneyATgmailDOTcom)
+  
+  Visit my webiste at http://www.jrcharney.com/ or my GitHub page at https://github.com/jrcharney/
+
+  Copyright  8 Nov 2013
+
+LICENSE
+ MIT License. Free to use. Free to share. Free to edit so as long as you acknowlege the original author (me).
+
