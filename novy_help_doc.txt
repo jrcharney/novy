@@ -1,20 +1,20 @@
 # File: novy_help_doc.txt
 # Autor: Jason Charney, BSCS
 # Email: jrcharneyATgmailDOTcom
-# Date:   7 Nov 2013
-# Info:  The contents of the help section for new_doc which apply 
-#	to other new_ programs as well.
+# Date:   8 Nov 2013
+# Info:  The contents of the help section for novy_doc which apply 
+#	to other novy programs as well.
 
 novy_doc - automatically write the header documentation.
 
-This program is used by the other Novy programs
+This program is used by the other Novy programs.
 
 To generate header documentation
 
 USAGE
   ./novy_doc.sh OPTIONS > NEWFILE
   However, you shouldn't use it like this. It should be done while
-  using novy_c or novy_java. So any options used in those programs will
+  using other Novy programs. So any options used in those programs will
   be passed to novy_doc.sh
   
   NOTE: This program DOES NOT use JavaDoc style documentation...yet.
@@ -25,42 +25,48 @@ FILE OPTION
   any values in between double quotes ('"') so that they are recognized as a single
   argument, other wise you will encounter errors or the output will be incorrect.
 
-  file-name FILENAME		-fn FILENAME
+  --file-first FIRSTLINE		-f1 FIRSTLINE
+  	Write this as the first line of a file that uses Hash or PostScript style
+	comments.  novy_script.sh will generally use this to create a file
+	based on file extension.  This option will return an error if
+	used with novy_java.sh or novy_c.sh
+
+  --file-name FILENAME			-fn FILENAME
   	Creates a File field for the name of this file. This option is required.
 	All other options are optional.
 
-  file-version VERSION		-fv VERSION
+  --file-version VERSION		-fv VERSION
   	Create a Version field.
 
-  file-date DATE		-fd DATE
+  --file-date DATE			-fd DATE
   	Create a Date field that uses a date other than
   	the one provided by fecha[string] in .novyrc.
 	If you do not use this option, the Date field will automatically be added
 	anyway as part of a standard header unless the 'nofile' option is used.
 	To change the format of the date used, edit fecha[format] in .novyrc.
 
-  file-author NAME		-fa NAME
+  --file-author NAME			-fa NAME
   	Create a Name field that uses a name other than
 	the one provided by self[name] In .novyrc.
 	If you do not use this option, the Name field will automatically be added
 	anyway as part of the standard header unless the 'nofile' option is used.
 	
-  file-author-email EMAIL	-fae EMAIL
+  --file-author-email EMAIL		-fae EMAIL
   	Create a Email field that uses an email address other than
 	the one provided by self[email] In .novyrc.
 	If you do not use this option, the Email field will automatically be added
 	anyway as part of the standard header unless the 'nofile' option is used.
 	For your security, any '@' or '.' characters will be replaced.
   
-  file-website URL		-fw URL
+  --file-website URL			-fw URL
   	Create a Website field that is used to indicate the 
 	website of the author, a project, or a company.
 
-  file-requirements FILELIST	-fr FILELIST
+  --file-requirements FILELIST		-fr FILELIST
 	Create a Requirements field that is used to indicate what software
 	is required for this program to work effectively.
 
-  file-info	INFO		-fi INFO
+  --file-info INFO			-fi INFO
   	Information about a file.  This would be suitable for a 
 	brief description in five words or less,
 	otherwise, you will want to write the complete information inside the file.
@@ -83,47 +89,47 @@ BOOK/EXAMPLE OPTION
   All your vales for these fields MUST be encapsulated in double quotes
   for proper processing.
 
-  book-title TITLE		-bt TITLE
+  --book-title TITLE			-bt TITLE
    	Create the Title field for the title of a book.
 
-  book-author AUTHOR		-ba AUTHOR
+  --book-author AUTHOR			-ba AUTHOR
    	Create the Author field for the author of a book.
 
-  book-publisher PUBLISHER	-bp PUBLISHER
+  --book-publisher PUBLISHER		-bp PUBLISHER
    	Create the Publisher field for the publisher of a book.
 
-  book-publisher-location LOCATION	-bpl LOCATION
+  --book-publisher-location LOCATION	-bpl LOCATION
    	Create the Location field for the publisher's main office location.
 
-  book-edition EDITION		-be EDITION
+  --book-edition EDITION		-be EDITION
   	Create the Edition field for the edition of a book.
 
-  book-year YEAR		-by YEAR
+  --book-year YEAR			-by YEAR
   	Create the Published field for the year the book was published.
 	If you want to add the month or day of the source, especially
 	if it was from a magazine, newspaper, or website that you accessed,
 	be sure to include that.
 
-  book-isbn ISBN		-bi ISBN
+  --book-isbn ISBN			-bi ISBN
   	Create the ISBN field to indicate the ISBN number of the book or printed source.
 	Eventually entering in this field will automatically insert the data
 	for the previous fields, when and if I find a way to store book information
 	into a local database for storage of common books. (new_book.sh?)
   
-  book-website URL		-bw URL
+  --book-website URL			-bw URL
   	Create a Website field indicating the URL this example/figure 
 	can be found on or the website of the author, publisher, or book.
 
-  book-website-accessed DATE	-bwa DATE
+  --book-website-accessed DATE		-bwa DATE
   	Because websites can change addresses, change structures, or close, it is a good
 	idea to indicate when you accessed this site to verify your source was legitimate.
 	This option creates the Accessed field indicating the date in which you last
 	access that site.
 
-  book-figure FIGURE		-bfn FIGURE
+  --book-figure FIGURE			-bfn FIGURE
   	Create the Figure field to indicate the figure number from a book.
 
-  book-page PAGENUM		-bfp PAGENUM
+  --book-page PAGENUM			-bfp PAGENUM
   	Create the Page field to indicate the first page that a figure is on
 	or where the example is in the book.
 
@@ -131,19 +137,19 @@ SWITCH OPTION
 	These options will disable a set of fields even if information
 	has been entered in for them.
 
-  noself
+  --noself
   	Don't use the 'self' fields from .novyrc that enter in your name and email address.
 
-  nodate
+  --nodate
   	Don't use the 'fecha' field from .novyrc that enters in the date 
 	and applies date formats to date fields.
 
-  nofile
+  --nofile
   	Don't use ANY of the file fields other than the Name field.
-  nobook
+  --nobook
   	Don't use ANY of the book fields.
 
-  help		--help		-h
+  --help		-h
   	Print this usages information.  This option only works if it is the ONLY option.
 
 CREDITS
@@ -151,7 +157,7 @@ CREDITS
   
   Visit my webiste at http://www.jrcharney.com/ or my GitHub page at https://github.com/jrcharney/
 
-  Copyright  7 Nov 2013
+  Copyright  5 Nov 2013
 
 LICENSE
  MIT License. Free to use. Free to share. Free to edit so as long as you acknowlege the original author (me).
