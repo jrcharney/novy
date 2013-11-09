@@ -132,8 +132,9 @@ fi
 # Comment style
 declare -A com
 case ${use[style]} in
- c|java)   com[s]="c"; com[b]="/* "; com[m]=" * "; com[e]=" */" ;;
- h|"hash") com[s]="h"; com[b]="# ";  com[m]="# ";  com[e]="" ;;
+ c|java)   com[s]="c"; com[b]="/* "; com[m]=" * "; com[e]=" */" ;;	# C-style
+ h|"hash") com[s]="h"; com[b]="# ";  com[m]="# ";  com[e]="" ;;		# hash-style
+ p|ps)     com[s]="p"; com[b]="% ";  com[m]="% ";  com[e]="" ;;         # PostScript-style
  *) echo "$0 ERROR: Invalid comment style. Aborting the script."; exit 1 ;;
 esac
 
