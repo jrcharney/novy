@@ -1,12 +1,11 @@
 #!/bin/bash
 # File: novy_doc.sh
-# Date:  6 Nov 2013
+# Date:  8 Nov 2013
 # Author: Jason Charney, BSCS
 # Email: jrcharneyATgmailDOTcom
-# Info: Establish documentation in the header of a file created with the novy programs.
 # Requirements: sed, less, bash
-# TODO: Documentation style for scripts that use octothorpe commenting.
-# TODO:  This file needs to be tested!
+# Info: Establish documentation in the header of a file created with the novy programs.
+
 
 ask_yn(){
  # Note: this script will abort if a proper answer is not given after three tries.
@@ -81,7 +80,7 @@ use[self]=1
 use[fecha]=1
 use[file]=1
 use[book]=1
-use[style]="c"		# Comment style "c" = C-style (used in C, C++, Java, and PHP), "h" = Hash style (used in Bash, Perl, Ruby)
+use[style]="c"		# Comment style "c" = C-style (used in C, C++, Java, and PHP), "h" = Hash style (used in Bash, Perl, Ruby), "p" = PostScript style (PS, LaTeX)
 
 # NOTE: Book fields are added for citing book information for examples that were used from books.
 #	Only the filled out fields will be written.
@@ -89,6 +88,7 @@ use[style]="c"		# Comment style "c" = C-style (used in C, C++, Java, and PHP), "
 # NOTE: Even if you don't use the file-info option, an Info field will be added to the header unless nofile is used.
 while :; do
  case $1 in
+  --file-first|-f1)			shift; file[first]=$1 ;;	# Put this on the first line of the file. (necessary for several file types)
   --file-name|-fn)			shift; file[name]=$1 ;;		# The name of this file, definintely required.
   --file-version|-fv)			shift; file[version]=$1 ;;	# Version of this file
   --file-date|-fd)			shift; file[date]=$1;;		# Use a date other than the one provided by fecha[string]
@@ -130,15 +130,17 @@ if [[ -z ${file[name]} ]]; then
 fi
 
 # Comment style
+# TODO: LaTeX files have a very special format of comment styling. I'll have to integrate that with this program later.
 declare -A com
 case ${use[style]} in
- c|java)   com[s]="c"; com[b]="/* "; com[m]=" * "; com[e]=" */" ;;	# C-style
- h|"hash") com[s]="h"; com[b]="# ";  com[m]="# ";  com[e]="" ;;		# hash-style
- p|ps)     com[s]="p"; com[b]="% ";  com[m]="% ";  com[e]="" ;;         # PostScript-style
+ c|java)   com[s]="c"; com[b]="/* "; com[m]=" * "; com[e]=" */" ;;	# C-Style
+ h|"hash") com[s]="h"; com[b]="# ";  com[m]="# ";  com[e]="" ;;		# Hash-style
+ p|ps)     com[s]="p"; com[b]="% ";  com[m]="% ";  com[e]="" ;;		# PostScript-style
  *) echo "$0 ERROR: Invalid comment style. Aborting the script."; exit 1 ;;
 esac
 
 # REMEMBER: If you do not forward the output of this data to a file it will print to standard output.
+[[ -n ${file[first]} ]] && echo "${file[first]}"	# The first line in many file types.
 echo "${com[b]}File: ${file[name]}"			# This should make the file name field first. Open our heading Java comments
 if [[ ${use[file]} -ne 0 ]]; then
    [[ -n ${file[version]} ]] && echo "${com[m]}Version: ${file[version]}"
